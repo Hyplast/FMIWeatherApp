@@ -13,6 +13,11 @@ private data class IndexedWeatherData(
     val data: WeatherData
 )
 
+private data class IndexedObservationData(
+    val index: Int,
+    val data: WeatherData
+)
+
 fun WeatherDataDto.toWeatherDataMap(): Map<Int, List<WeatherData>> {
     return time.mapIndexed { index, time ->
         val temperature = temperatures[index]
